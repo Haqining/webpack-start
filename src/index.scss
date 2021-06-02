@@ -1,0 +1,15 @@
+#root {
+  background-color: #eb5f5e;
+  box-shadow: 0 4px 16px #eb5f5e;
+  transform: rotate(45deg);
+
+  & > div {
+    width: 100px;
+    height: 100px;
+  }
+
+  span {
+    width: 100px;
+    height: 100px;
+  }
+}
