@@ -39,7 +39,8 @@ module.exports = {
           },
           "sass-loader"
         ]
-      }
+      },
+      { test: /\.(jpe?g|png|svg|ico)$/, type: "asset" }
     ]
   },
   plugins: [
