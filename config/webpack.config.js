@@ -8,7 +8,7 @@ module.exports = {
   entry: path.resolve(__dirname, "../src/index.js"),
   output: {
     filename: "[name].[hash:8].js", // 打包后文件名
-    path: path.resolve(__dirname, "../dist") // 打包目标文件夹
+    path: path.resolve(__dirname, "../dist") // 输出目录
   },
   module: {
     rules: [
@@ -40,7 +40,11 @@ module.exports = {
           "sass-loader"
         ]
       },
-      { test: /\.(jpe?g|png|svg|ico)$/, type: "asset" }
+      {
+        test: /\.(jpe?g|png|svg|ico)$/,
+        type: "asset",
+        generator: { filename: "images/[hash][ext][query]" }
+      }
     ]
   },
   plugins: [
