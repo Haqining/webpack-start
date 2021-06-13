@@ -5,7 +5,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development", // 开发模式
-  entry: path.resolve(__dirname, "../src/index.js"),
+  entry: ["@babel/polyfill", path.resolve(__dirname, "../src/index.js")],
   output: {
     filename: "[name].[hash:8].js", // 打包后文件名
     path: path.resolve(__dirname, "../dist") // 输出目录
@@ -44,6 +44,16 @@ module.exports = {
         test: /\.(jpe?g|png|svg|ico)$/,
         type: "asset",
         generator: { filename: "images/[hash][ext][query]" }
+      },
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: { presets: ["@babel/preset-env"] }
+          }
+        ],
+        exclude: /node_modules/
       }
     ]
   },
