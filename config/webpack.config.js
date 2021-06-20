@@ -5,7 +5,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development", // 开发模式
-  entry: ["@babel/polyfill", path.resolve(__dirname, "../src/index.js")],
+  entry: ["@babel/polyfill", path.resolve(__dirname, "../src/index.js")], // 打包的起点
   output: {
     filename: "[name].[hash:8].js", // 打包后文件名
     path: path.resolve(__dirname, "../dist") // 输出目录
