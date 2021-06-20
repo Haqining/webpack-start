@@ -60,9 +60,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, "../public/index.html"),
-      inject: "body", // 引入 js 文件到 <body>
-      scriptLoading: "blocking" // js 文件的加载模式
+      template: path.resolve(__dirname, "../public/index.html")
     }),
     new MiniCssExtractPlugin({ filename: "[name].[hash].css" })
   ]

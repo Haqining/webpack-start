@@ -1,8 +1,10 @@
 {
-  "name": "webpack-demo-i",
+  "name": "webpack-start",
   "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Haqining/webpack-start.git",
+  "author": "Haqin <h_aqina@qq.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "webpack --config config/webpack.config.js"
   },
