@@ -14,7 +14,14 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"] // 从右向左解析
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: { importLoaders: 1 } },
+          {
+            loader: "postcss-loader",
+            options: { postcssOptions: { plugins: ["autoprefixer"] } }
+          }
+        ] // 从右向左解析
       },
       {
         test: /\.less$/,
